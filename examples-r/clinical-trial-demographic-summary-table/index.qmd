@@ -1,0 +1,212 @@
+---
+title: "Clinical trial demographic summary table"
+categories: "Pharma"
+description: "Using {gt} to create a demographics summary table using an ADSL ADaM clinical trial dataset."
+format: html
+image: ../../code.png
+---
+
+## Code
+
+```{r}
+#| label: adsl-setup
+#| include: false
+library(random.cdisc.data)
+library(gt)
+library(dplyr)
+library(rlang)
+
+rx_adsl <-
+  radsl(
+    N = 4000,
+    study_duration = 1,
+    seed = NULL,
+    with_trt02 = TRUE,
+    na_percentage = 0,
+    na_vars = list(
+      AGE = NA,
+      SEX = NA,
+      RACE = NA,
+      STRATA1 = NA,
+      STRATA2 = NA,
+      BMRKR1 =
+        c(seed = 1234, percentage = 0.1),
+      BMRKR2 = c(1234, 0.1),
+      BEP01FL = NA
+    ),
+    ae_withdrawal_prob = 0.05,
+    cached = FALSE
+  )
+
+custom_summary <- function(df, group_var, sum_var) {
+  
+  group_var <- rlang::ensym(group_var)
+  sum_var <- rlang::ensym(sum_var)
+  
+  if (!rlang::as_name(group_var) %in% colnames(df) || !rlang::as_name(sum_var) %in% colnames(df)) {
+    stop("Specified group_var or sum_var does not exist in the data.")
+  }
+  
+  is_categorical <- 
+    is.character(df[[rlang::as_name(sum_var)]]) |
+    is.factor(df[[rlang::as_name(sum_var)]])
+  
+  if (is_categorical) {
+    category_lbl <- attr(df[[rlang::as_name(sum_var)]], "label") %||% "Category Summary"
+    df_out <- df |>
+      dplyr::group_by(!!group_var) |> 
+      dplyr::mutate(N = dplyr::n()) |> 
+      dplyr::ungroup() |> 
+      dplyr::group_by(!!group_var, !!sum_var) |> 
+      dplyr::summarize(
+        val = dplyr::n(),
+        pct = dplyr::n() / mean(N),
+        .groups = "drop"
+      ) |> 
+      tidyr::pivot_wider(
+        id_cols = !!sum_var, names_from = !!group_var,
+        values_from = c(val, pct)
+      ) |> 
+      dplyr::rename(label = !!sum_var) |> 
+      dplyr::mutate(
+        across(where(is.numeric), ~ifelse(is.na(.), 0, .)),
+        category = category_lbl
+      )
+  } else {
+    category_lbl <- sprintf(
+      "%s (%s)",
+      attr(df[[rlang::as_name(sum_var)]], "label") %||% "Summary",
+      attr(df[[rlang::as_name(sum_var)]], "units") %||% ""
+    )
+    df_out <- df |> 
+      dplyr::group_by(!!group_var) |> 
+      dplyr::summarize(
+        n = sum(!is.na(!!sum_var)),
+        mean = mean(!!sum_var, na.rm = TRUE),
+        sd = sd(!!sum_var, na.rm = TRUE),
+        median = median(!!sum_var, na.rm = TRUE),
+        min = min(!!sum_var, na.rm = TRUE),
+        max = max(!!sum_var, na.rm = TRUE),
+        min_max = NA,
+        .groups = "drop"
+      ) |> 
+      tidyr::pivot_longer(
+        cols = c(n, mean, median, min_max),
+        names_to = "label",
+        values_to = "val"
+      ) |> 
+      dplyr::mutate(
+        sd = ifelse(label == "mean", sd, NA),
+        max = ifelse(label == "min_max", max, NA),
+        min = ifelse(label == "min_max", min, NA),
+        label = dplyr::recode(
+          label,
+          "mean" = "Mean (SD)",
+          "min_max" = "Min - Max",
+          "median" = "Median"
+        )
+      ) |> 
+      tidyr::pivot_wider(
+        id_cols = label,
+        names_from = !!group_var,
+        values_from = c(val, sd, min, max)
+      ) |> 
+      dplyr::mutate(category = category_lbl)
+  }
+  
+  return(df_out)
+}
+```
+
+```{r}
+#| warning: false
+#| include: false
+#| label: adsl-function
+adsl_summary <-
+  dplyr::filter(rx_adsl, ITTFL == "Y") |>
+  (\(data) purrr::map_df(
+    .x = dplyr::vars(AGE, SEX, RACE, ETHNIC),
+    .f = \(x) custom_summary(
+      df = data,
+      group_var = TRT01P,
+      sum_var = !!x
+    )
+  ))()
+```
+
+```{r}
+#| warning: false
+#| label: adsl-table
+library(gt)
+library(dplyr)
+library(rlang)
+
+rx_adsl_tbl <-
+  adsl_summary |>
+  gt(rowname_col = "label", groupname_col = "category") |>
+  tab_header(title = "x.x: Demographic Characteristics", subtitle = "x.x.x: Demographic Characteristics - ITT Analysis Set") |>
+  fmt_integer(columns = starts_with(c("val_", "min_", "max_")),
+              rows = label %in% c("n", "Median", "Min - Max")) |>
+  fmt_percent(columns = starts_with("pct_"), decimals = 1) |>
+  fmt_number(
+    columns = starts_with("val_"),
+    rows = label == "Mean (SD)",
+    decimals = 1
+  ) |>
+  fmt_number(
+    columns = starts_with("sd_"),
+    rows = label == "Mean (SD)",
+    decimals = 2
+  ) |>
+  cols_merge(
+    columns = c(
+      "val_A: Drug X",
+      "val_B: Placebo",
+      "val_C: Combination",
+      "sd_A: Drug X",
+      "sd_B: Placebo",
+      "sd_C: Combination",
+      "min_A: Drug X",
+      "min_B: Placebo",
+      "min_C: Combination",
+      "max_A: Drug X",
+      "max_B: Placebo",
+      "max_C: Combination",
+      "pct_A: Drug X",
+      "pct_B: Placebo",
+      "pct_C: Combination"
+    ),
+    pattern = "<<{1}>><< ({2})>><< ({3})>><<{4} - {5}>>"
+  ) |>
+  cols_merge(
+    columns = c(
+      "val_A: Drug X",
+      "sd_A: Drug X",
+      "min_A: Drug X",
+      "max_A: Drug X",
+      "pct_A: Drug X"
+    ),
+    pattern = "<<{1}>><< ({2})>><< ({3})>><<{4} - {5}>>"
+  ) |>
+  tab_stub_indent(rows = everything(), indent = 5) |>
+  opt_align_table_header(align = "left") |>
+  cols_width(starts_with("val_") ~ px(200), 1 ~ px(250)) |>
+  cols_align(align = "center", columns = starts_with("val_"))
+
+arm_n <-
+  rx_adsl |>
+  dplyr::filter(ITTFL == "Y") |>
+  dplyr::group_by(TRT01P) |>
+  dplyr::summarize(lbl = sprintf("%s N=%i (100%%)", unique(TRT01P), dplyr::n()),
+                   .groups = "drop") |>
+  dplyr::arrange(TRT01P)
+
+collbl_list <- as.list(arm_n$lbl)
+names(collbl_list) <- paste0("val_", arm_n$TRT01P)
+
+rx_adsl_tbl <-
+  rx_adsl_tbl |>
+  cols_label(.list = collbl_list)
+
+rx_adsl_tbl
+```

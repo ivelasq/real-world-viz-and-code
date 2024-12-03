@@ -1,0 +1,19 @@
+---
+title: "Real-World Data Visualizations and Code"
+toc: false
+listing:
+  - id: examples-r
+    contents: examples-r
+    type: grid
+    categories: true
+format: 
+  html:
+    page-layout: article
+---
+
+## R
+
+:::{#examples-r}
+:::
+
+
