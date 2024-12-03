@@ -14,6 +14,95 @@
     "engines": ["markdown", "knitr"]
   },
   "packages": {
+    "MASS": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "MASS",
+        "Priority": "recommended",
+        "Version": "7.3-60",
+        "Date": "2023-05-02",
+        "Revision": "$Rev: 3621 $",
+        "Depends": "R (>= 4.0), grDevices, graphics, stats, utils",
+        "Imports": "methods",
+        "Suggests": "lattice, nlme, nnet, survival",
+        "Authors@R": "c(person(\"Brian\", \"Ripley\", role = c(\"aut\", \"cre\", \"cph\"),\nemail = \"ripley@stats.ox.ac.uk\"),\nperson(\"Bill\", \"Venables\", role = \"ctb\"),\nperson(c(\"Douglas\", \"M.\"), \"Bates\", role = \"ctb\"),\nperson(\"Kurt\", \"Hornik\", role = \"trl\",\ncomment = \"partial port ca 1998\"),\nperson(\"Albrecht\", \"Gebhardt\", role = \"trl\",\ncomment = \"partial port ca 1998\"),\nperson(\"David\", \"Firth\", role = \"ctb\"))",
+        "Description": "Functions and datasets to support Venables and Ripley,\n\"Modern Applied Statistics with S\" (4th edition, 2002).",
+        "Title": "Support Functions and Datasets for Venables and Ripley's MASS",
+        "LazyData": "yes",
+        "ByteCompile": "yes",
+        "License": "GPL-2 | GPL-3",
+        "URL": "http://www.stats.ox.ac.uk/pub/MASS4/",
+        "Contact": "<MASS@stats.ox.ac.uk>",
+        "NeedsCompilation": "yes",
+        "Packaged": "2023-05-02 16:42:41 UTC; ripley",
+        "Author": "Brian Ripley [aut, cre, cph],\nBill Venables [ctb],\nDouglas M. Bates [ctb],\nKurt Hornik [trl] (partial port ca 1998),\nAlbrecht Gebhardt [trl] (partial port ca 1998),\nDavid Firth [ctb]",
+        "Maintainer": "Brian Ripley <ripley@stats.ox.ac.uk>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-05-04 07:32:21 UTC",
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2023-11-01 20:53:33 UTC; unix"
+      }
+    },
+    "Matrix": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "Matrix",
+        "Version": "1.6-1.1",
+        "Date": "2023-09-08",
+        "Priority": "recommended",
+        "Title": "Sparse and Dense Matrix Classes and Methods",
+        "Description": "A rich hierarchy of sparse and dense matrix classes,\nincluding general, symmetric, triangular, and diagonal matrices\nwith numeric, logical, or pattern entries.  Efficient methods for\noperating on such matrices, often wrapping the 'BLAS', 'LAPACK',\nand 'SuiteSparse' libraries.",
+        "License": "GPL (>= 2) | file LICENCE",
+        "URL": "https://Matrix.R-forge.R-project.org",
+        "BugReports": "https://R-forge.R-project.org/tracker/?atid=294&group_id=61",
+        "Contact": "Matrix-authors@R-project.org",
+        "Authors@R": "c(person(\"Douglas\", \"Bates\", role = \"aut\",\ncomment = c(ORCID = \"0000-0001-8316-9503\")),\nperson(\"Martin\", \"Maechler\", role = c(\"aut\", \"cre\"),\nemail = \"mmaechler+Matrix@gmail.com\",\ncomment = c(ORCID = \"0000-0002-8685-9910\")),\nperson(\"Mikael\", \"Jagan\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-3542-2938\")),\nperson(\"Timothy A.\", \"Davis\", role = \"ctb\",\ncomment = c(ORCID = \"0000-0001-7614-6899\",\n\"SuiteSparse libraries, notably CHOLMOD and AMD\",\n\"collaborators listed in dir(pattern=\\\"^[A-Z]+[.]txt$\\\", full.names=TRUE, system.file(\\\"doc\\\", \\\"SuiteSparse\\\", package=\\\"Matrix\\\"))\")),\nperson(\"Jens\", \"Oehlschlägel\", role = \"ctb\",\ncomment = \"initial nearPD()\"),\nperson(\"Jason\", \"Riedy\", role = \"ctb\",\ncomment = c(ORCID = \"0000-0002-4345-4200\",\n\"GNU Octave's condest() and onenormest()\",\n\"Copyright: Regents of the University of California\")),\nperson(\"R Core Team\", role = \"ctb\",\ncomment = \"base R's matrix implementation\"))",
+        "Depends": "R (>= 3.5.0), methods",
+        "Imports": "grDevices, graphics, grid, lattice, stats, utils",
+        "Suggests": "MASS, datasets, sfsmisc",
+        "Enhances": "SparseM, graph",
+        "LazyData": "no",
+        "LazyDataNote": "not possible, since we use data/*.R and our S4 classes",
+        "BuildResaveData": "no",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2023-09-08 10:37:27 UTC; maechler",
+        "Author": "Douglas Bates [aut] (<https://orcid.org/0000-0001-8316-9503>),\nMartin Maechler [aut, cre] (<https://orcid.org/0000-0002-8685-9910>),\nMikael Jagan [aut] (<https://orcid.org/0000-0002-3542-2938>),\nTimothy A. Davis [ctb] (<https://orcid.org/0000-0001-7614-6899>,\nSuiteSparse libraries, notably CHOLMOD and AMD, collaborators\nlisted in dir(pattern=\"^[A-Z]+[.]txt$\", full.names=TRUE,\nsystem.file(\"doc\", \"SuiteSparse\", package=\"Matrix\"))),\nJens Oehlschlägel [ctb] (initial nearPD()),\nJason Riedy [ctb] (<https://orcid.org/0000-0002-4345-4200>, GNU\nOctave's condest() and onenormest(), Copyright: Regents of the\nUniversity of California),\nR Core Team [ctb] (base R's matrix implementation)",
+        "Maintainer": "Martin Maechler <mmaechler+Matrix@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-09-18 17:40:02 UTC",
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2023-11-01 20:53:46 UTC; unix"
+      }
+    },
+    "MedDataSets": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "MedDataSets",
+        "Type": "Package",
+        "Title": "Comprehensive Medical, Disease, Treatment, and Drug Datasets",
+        "Version": "0.1.0",
+        "Maintainer": "Renzo Caceres Rossi <arenzocaceresrossi@gmail.com>",
+        "Description": "Provides an extensive collection of datasets related to medicine,\ndiseases, treatments, drugs, and public health. This package covers topics\nsuch as drug effectiveness, vaccine trials, survival rates,\ninfectious disease outbreaks, and medical treatments. The included datasets\nspan various health conditions, including AIDS, cancer, bacterial infections,\nand COVID-19, along with information on pharmaceuticals and vaccines. These\ndatasets are sourced from the R ecosystem and other R packages, remaining\nunaltered to ensure data integrity. This package serves as a valuable\nresource for researchers, analysts, and healthcare professionals interested\nin conducting medical and public health data analysis in R.",
+        "License": "GPL-3",
+        "URL": "https://github.com/lightbluetitan/meddatasets",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "Suggests": "ggplot2, dplyr, devtools, knitr, rmarkdown, testthat (>=\n3.0.0)",
+        "Authors@R": "person(given = c(\"Renzo\", \"Caceres\"),\nfamily = \"Rossi\",\nrole = c(\"aut\", \"cre\"),\nemail = \"arenzocaceresrossi@gmail.com\")",
+        "RoxygenNote": "7.3.2",
+        "Config/testthat/edition": "3",
+        "VignetteBuilder": "knitr",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-10-22 07:17:09 UTC; renzorossiv",
+        "Author": "Renzo Caceres Rossi [aut, cre]",
+        "Depends": "R (>= 3.5.0)",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-10-24 14:20:02 UTC",
+        "Built": "R 4.3.3; ; 2024-10-24 15:10:35 UTC; unix"
+      }
+    },
     "R6": {
       "Source": "CRAN",
       "Repository": "http://cran.rstudio.com",
@@ -721,6 +810,38 @@
         "Built": "R 4.3.0; ; 2023-04-11 20:07:12 UTC; unix"
       }
     },
+    "ggplot2": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "ggplot2",
+        "Version": "3.5.1",
+        "Title": "Create Elegant Data Visualisations Using the Grammar of Graphics",
+        "Authors@R": "c(\nperson(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = \"aut\",\ncomment = c(ORCID = \"0000-0003-4757-117X\")),\nperson(\"Winston\", \"Chang\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-1576-2126\")),\nperson(\"Lionel\", \"Henry\", role = \"aut\"),\nperson(\"Thomas Lin\", \"Pedersen\", , \"thomas.pedersen@posit.co\", role = c(\"aut\", \"cre\"),\ncomment = c(ORCID = \"0000-0002-5147-4711\")),\nperson(\"Kohske\", \"Takahashi\", role = \"aut\"),\nperson(\"Claus\", \"Wilke\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-7470-9261\")),\nperson(\"Kara\", \"Woo\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-5125-4188\")),\nperson(\"Hiroaki\", \"Yutani\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-3385-7233\")),\nperson(\"Dewey\", \"Dunnington\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-9415-4582\")),\nperson(\"Teun\", \"van den Brand\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-9335-7468\")),\nperson(\"Posit, PBC\", role = c(\"cph\", \"fnd\"))\n)",
+        "Description": "A system for 'declaratively' creating graphics, based on \"The\nGrammar of Graphics\". You provide the data, tell 'ggplot2' how to map\nvariables to aesthetics, what graphical primitives to use, and it\ntakes care of the details.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://ggplot2.tidyverse.org,\nhttps://github.com/tidyverse/ggplot2",
+        "BugReports": "https://github.com/tidyverse/ggplot2/issues",
+        "Depends": "R (>= 3.5)",
+        "Imports": "cli, glue, grDevices, grid, gtable (>= 0.1.1), isoband,\nlifecycle (> 1.0.1), MASS, mgcv, rlang (>= 1.1.0), scales (>=\n1.3.0), stats, tibble, vctrs (>= 0.6.0), withr (>= 2.5.0)",
+        "Suggests": "covr, dplyr, ggplot2movies, hexbin, Hmisc, knitr, mapproj,\nmaps, multcomp, munsell, nlme, profvis, quantreg, ragg (>=\n1.2.6), RColorBrewer, rmarkdown, rpart, sf (>= 0.7-3), svglite\n(>= 2.1.2), testthat (>= 3.1.2), vdiffr (>= 1.0.6), xml2",
+        "Enhances": "sp",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "ggtext, tidyr, forcats, tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "RoxygenNote": "7.3.1",
+        "Collate": "'ggproto.R' 'ggplot-global.R' 'aaa-.R'\n'aes-colour-fill-alpha.R' 'aes-evaluation.R'\n'aes-group-order.R' 'aes-linetype-size-shape.R'\n'aes-position.R' 'compat-plyr.R' 'utilities.R' 'aes.R'\n'utilities-checks.R' 'legend-draw.R' 'geom-.R'\n'annotation-custom.R' 'annotation-logticks.R' 'geom-polygon.R'\n'geom-map.R' 'annotation-map.R' 'geom-raster.R'\n'annotation-raster.R' 'annotation.R' 'autolayer.R' 'autoplot.R'\n'axis-secondary.R' 'backports.R' 'bench.R' 'bin.R' 'coord-.R'\n'coord-cartesian-.R' 'coord-fixed.R' 'coord-flip.R'\n'coord-map.R' 'coord-munch.R' 'coord-polar.R'\n'coord-quickmap.R' 'coord-radial.R' 'coord-sf.R'\n'coord-transform.R' 'data.R' 'docs_layer.R' 'facet-.R'\n'facet-grid-.R' 'facet-null.R' 'facet-wrap.R' 'fortify-lm.R'\n'fortify-map.R' 'fortify-multcomp.R' 'fortify-spatial.R'\n'fortify.R' 'stat-.R' 'geom-abline.R' 'geom-rect.R'\n'geom-bar.R' 'geom-bin2d.R' 'geom-blank.R' 'geom-boxplot.R'\n'geom-col.R' 'geom-path.R' 'geom-contour.R' 'geom-count.R'\n'geom-crossbar.R' 'geom-segment.R' 'geom-curve.R'\n'geom-defaults.R' 'geom-ribbon.R' 'geom-density.R'\n'geom-density2d.R' 'geom-dotplot.R' 'geom-errorbar.R'\n'geom-errorbarh.R' 'geom-freqpoly.R' 'geom-function.R'\n'geom-hex.R' 'geom-histogram.R' 'geom-hline.R' 'geom-jitter.R'\n'geom-label.R' 'geom-linerange.R' 'geom-point.R'\n'geom-pointrange.R' 'geom-quantile.R' 'geom-rug.R' 'geom-sf.R'\n'geom-smooth.R' 'geom-spoke.R' 'geom-text.R' 'geom-tile.R'\n'geom-violin.R' 'geom-vline.R' 'ggplot2-package.R'\n'grob-absolute.R' 'grob-dotstack.R' 'grob-null.R' 'grouping.R'\n'theme-elements.R' 'guide-.R' 'guide-axis.R'\n'guide-axis-logticks.R' 'guide-axis-stack.R'\n'guide-axis-theta.R' 'guide-legend.R' 'guide-bins.R'\n'guide-colorbar.R' 'guide-colorsteps.R' 'guide-custom.R'\n'layer.R' 'guide-none.R' 'guide-old.R' 'guides-.R'\n'guides-grid.R' 'hexbin.R' 'import-standalone-obj-type.R'\n'import-standalone-types-check.R' 'labeller.R' 'labels.R'\n'layer-sf.R' 'layout.R' 'limits.R' 'margins.R' 'performance.R'\n'plot-build.R' 'plot-construction.R' 'plot-last.R' 'plot.R'\n'position-.R' 'position-collide.R' 'position-dodge.R'\n'position-dodge2.R' 'position-identity.R' 'position-jitter.R'\n'position-jitterdodge.R' 'position-nudge.R' 'position-stack.R'\n'quick-plot.R' 'reshape-add-margins.R' 'save.R' 'scale-.R'\n'scale-alpha.R' 'scale-binned.R' 'scale-brewer.R'\n'scale-colour.R' 'scale-continuous.R' 'scale-date.R'\n'scale-discrete-.R' 'scale-expansion.R' 'scale-gradient.R'\n'scale-grey.R' 'scale-hue.R' 'scale-identity.R'\n'scale-linetype.R' 'scale-linewidth.R' 'scale-manual.R'\n'scale-shape.R' 'scale-size.R' 'scale-steps.R' 'scale-type.R'\n'scale-view.R' 'scale-viridis.R' 'scales-.R' 'stat-align.R'\n'stat-bin.R' 'stat-bin2d.R' 'stat-bindot.R' 'stat-binhex.R'\n'stat-boxplot.R' 'stat-contour.R' 'stat-count.R'\n'stat-density-2d.R' 'stat-density.R' 'stat-ecdf.R'\n'stat-ellipse.R' 'stat-function.R' 'stat-identity.R'\n'stat-qq-line.R' 'stat-qq.R' 'stat-quantilemethods.R'\n'stat-sf-coordinates.R' 'stat-sf.R' 'stat-smooth-methods.R'\n'stat-smooth.R' 'stat-sum.R' 'stat-summary-2d.R'\n'stat-summary-bin.R' 'stat-summary-hex.R' 'stat-summary.R'\n'stat-unique.R' 'stat-ydensity.R' 'summarise-plot.R'\n'summary.R' 'theme.R' 'theme-defaults.R' 'theme-current.R'\n'utilities-break.R' 'utilities-grid.R' 'utilities-help.R'\n'utilities-matrix.R' 'utilities-patterns.R'\n'utilities-resolution.R' 'utilities-tidy-eval.R' 'zxx.R'\n'zzz.R'",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-04-22 10:39:16 UTC; thomas",
+        "Author": "Hadley Wickham [aut] (<https://orcid.org/0000-0003-4757-117X>),\nWinston Chang [aut] (<https://orcid.org/0000-0002-1576-2126>),\nLionel Henry [aut],\nThomas Lin Pedersen [aut, cre]\n(<https://orcid.org/0000-0002-5147-4711>),\nKohske Takahashi [aut],\nClaus Wilke [aut] (<https://orcid.org/0000-0002-7470-9261>),\nKara Woo [aut] (<https://orcid.org/0000-0002-5125-4188>),\nHiroaki Yutani [aut] (<https://orcid.org/0000-0002-3385-7233>),\nDewey Dunnington [aut] (<https://orcid.org/0000-0002-9415-4582>),\nTeun van den Brand [aut] (<https://orcid.org/0000-0002-9335-7468>),\nPosit, PBC [cph, fnd]",
+        "Maintainer": "Thomas Lin Pedersen <thomas.pedersen@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-04-23 08:00:08 UTC",
+        "Built": "R 4.3.2; ; 2024-04-23 08:55:47 UTC; unix"
+      }
+    },
     "glue": {
       "Source": "CRAN",
       "Repository": "http://cran.rstudio.com",
@@ -750,6 +871,30 @@
         "Date/Publication": "2024-09-30 22:30:01 UTC",
         "Built": "R 4.3.3; x86_64-apple-darwin20; 2024-09-30 23:14:03 UTC; unix",
         "Archs": "glue.so.dSYM"
+      }
+    },
+    "gridExtra": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "gridExtra",
+        "Authors@R": "c(person(\"Baptiste\", \"Auguie\",\nemail = \"baptiste.auguie@gmail.com\",\nrole = c(\"aut\", \"cre\")), person(\"Anton\", \"Antonov\",\nemail = \"tonytonov@gmail.com\",\nrole = c(\"ctb\")))",
+        "License": "GPL (>= 2)",
+        "Title": "Miscellaneous Functions for \"Grid\" Graphics",
+        "Type": "Package",
+        "Description": "Provides a number of user-level functions to work with \"grid\"\ngraphics, notably to arrange multiple grid-based plots on a page, and draw\ntables.",
+        "Version": "2.3",
+        "VignetteBuilder": "knitr",
+        "Imports": "gtable, grid, grDevices, graphics, utils",
+        "Suggests": "ggplot2, egg, lattice, knitr, testthat",
+        "RoxygenNote": "6.0.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2017-09-08 22:52:09 UTC; baptiste",
+        "Author": "Baptiste Auguie [aut, cre],\nAnton Antonov [ctb]",
+        "Maintainer": "Baptiste Auguie <baptiste.auguie@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2017-09-09 14:12:08 UTC",
+        "Built": "R 4.3.0; ; 2023-04-17 22:23:48 UTC; unix"
       }
     },
     "gt": {
@@ -788,6 +933,35 @@
         "RemoteRepos": "http://cran.rstudio.com/",
         "RemotePkgPlatform": "x86_64-apple-darwin20",
         "RemoteSha": "0.11.0"
+      }
+    },
+    "gtable": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "gtable",
+        "Title": "Arrange 'Grobs' in Tables",
+        "Version": "0.3.5",
+        "Authors@R": "c(\nperson(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = \"aut\"),\nperson(\"Thomas Lin\", \"Pedersen\", , \"thomas.pedersen@posit.co\", role = c(\"aut\", \"cre\")),\nperson(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n)",
+        "Description": "Tools to make it easier to work with \"tables\" of 'grobs'. The\n'gtable' package defines a 'gtable' grob class that specifies a grid\nalong with a list of grobs and their placement in the grid. Further\nthe package makes it easy to manipulate and combine 'gtable' objects\nso that complex compositions can be built up sequentially.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://gtable.r-lib.org, https://github.com/r-lib/gtable",
+        "BugReports": "https://github.com/r-lib/gtable/issues",
+        "Depends": "R (>= 3.5)",
+        "Imports": "cli, glue, grid, lifecycle, rlang (>= 1.1.0)",
+        "Suggests": "covr, ggplot2, knitr, profvis, rmarkdown, testthat (>= 3.0.0)",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.3.1",
+        "NeedsCompilation": "no",
+        "Packaged": "2024-04-22 10:46:27 UTC; thomas",
+        "Author": "Hadley Wickham [aut],\nThomas Lin Pedersen [aut, cre],\nPosit Software, PBC [cph, fnd]",
+        "Maintainer": "Thomas Lin Pedersen <thomas.pedersen@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-04-22 20:40:02 UTC",
+        "Built": "R 4.3.2; ; 2024-04-22 22:51:07 UTC; unix"
       }
     },
     "highr": {
@@ -876,6 +1050,36 @@
         "Repository": "CRAN",
         "Date/Publication": "2023-12-06 06:00:06 UTC",
         "Built": "R 4.3.0; ; 2023-12-06 06:54:31 UTC; unix"
+      }
+    },
+    "isoband": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "isoband",
+        "Title": "Generate Isolines and Isobands from Regularly Spaced Elevation\nGrids",
+        "Version": "0.2.7",
+        "Authors@R": "c(\nperson(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = c(\"aut\", \"cre\"),\ncomment = c(ORCID = \"0000-0003-4757-117X\")),\nperson(\"Claus O.\", \"Wilke\", , \"wilke@austin.utexas.edu\", role = \"aut\",\ncomment = c(\"Original author\", ORCID = \"0000-0002-7470-9261\")),\nperson(\"Thomas Lin\", \"Pedersen\", , \"thomasp85@gmail.com\", role = \"aut\",\ncomment = c(ORCID = \"0000-0002-5147-4711\"))\n)",
+        "Description": "A fast C++ implementation to generate contour lines\n(isolines) and contour polygons (isobands) from regularly spaced grids\ncontaining elevation data.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://isoband.r-lib.org",
+        "BugReports": "https://github.com/r-lib/isoband/issues",
+        "Imports": "grid, utils",
+        "Suggests": "covr, ggplot2, knitr, magick, microbenchmark, rmarkdown, sf,\ntestthat, xml2",
+        "VignetteBuilder": "knitr",
+        "Config/Needs/website": "tidyverse/tidytemplate",
+        "Config/testthat/edition": "3",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "SystemRequirements": "C++11",
+        "NeedsCompilation": "yes",
+        "Packaged": "2022-12-19 20:10:02 UTC; hadleywickham",
+        "Author": "Hadley Wickham [aut, cre] (<https://orcid.org/0000-0003-4757-117X>),\nClaus O. Wilke [aut] (Original author,\n<https://orcid.org/0000-0002-7470-9261>),\nThomas Lin Pedersen [aut] (<https://orcid.org/0000-0002-5147-4711>)",
+        "Maintainer": "Hadley Wickham <hadley@posit.co>",
+        "Repository": "CRAN",
+        "Date/Publication": "2022-12-20 10:00:13 UTC",
+        "Built": "R 4.3.0; x86_64-apple-darwin20; 2023-04-11 20:18:09 UTC; unix",
+        "Archs": "isoband.so.dSYM"
       }
     },
     "jquerylib": {
@@ -1005,6 +1209,35 @@
         "Repository": "CRAN",
         "Date/Publication": "2023-08-29 22:20:02 UTC",
         "Built": "R 4.3.0; ; 2023-08-30 00:27:11 UTC; unix"
+      }
+    },
+    "lattice": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "lattice",
+        "Version": "0.21-9",
+        "Date": "2023-09-30",
+        "Priority": "recommended",
+        "Title": "Trellis Graphics for R",
+        "Authors@R": "c(person(\"Deepayan\", \"Sarkar\", role = c(\"aut\", \"cre\"),\nemail = \"deepayan.sarkar@r-project.org\",\ncomment = c(ORCID = \"0000-0003-4107-1553\")),\nperson(\"Felix\", \"Andrews\", role = \"ctb\"),\nperson(\"Kevin\", \"Wright\", role = \"ctb\", comment = \"documentation\"),\nperson(\"Neil\", \"Klepeis\", role = \"ctb\"),\nperson(\"Johan\", \"Larsson\", role = \"ctb\", comment = \"miscellaneous improvements\"),\nperson(\"Zhijian (Jason)\", \"Wen\", role = \"cph\", comment = \"filled contour code\"),\nperson(\"Paul\", \"Murrell\", role = \"ctb\", email = \"paul@stat.auckland.ac.nz\"),\nperson(\"Stefan\", \"Eng\", role = \"ctb\", comment = \"violin plot improvements\"),\nperson(\"Achim\", \"Zeileis\", role = \"ctb\", comment = \"modern colors\")\n)",
+        "Description": "A powerful and elegant high-level data visualization\nsystem inspired by Trellis graphics, with an emphasis on\nmultivariate data. Lattice is sufficient for typical graphics needs,\nand is also flexible enough to handle most nonstandard requirements.\nSee ?Lattice for an introduction.",
+        "Depends": "R (>= 4.0.0)",
+        "Suggests": "KernSmooth, MASS, latticeExtra, colorspace",
+        "Imports": "grid, grDevices, graphics, stats, utils",
+        "Enhances": "chron",
+        "LazyLoad": "yes",
+        "LazyData": "yes",
+        "License": "GPL (>= 2)",
+        "URL": "https://lattice.r-forge.r-project.org/",
+        "BugReports": "https://github.com/deepayan/lattice/issues",
+        "NeedsCompilation": "yes",
+        "Packaged": "2023-09-30 22:29:13 UTC; deepayan",
+        "Author": "Deepayan Sarkar [aut, cre] (<https://orcid.org/0000-0003-4107-1553>),\nFelix Andrews [ctb],\nKevin Wright [ctb] (documentation),\nNeil Klepeis [ctb],\nJohan Larsson [ctb] (miscellaneous improvements),\nZhijian (Jason) Wen [cph] (filled contour code),\nPaul Murrell [ctb],\nStefan Eng [ctb] (violin plot improvements),\nAchim Zeileis [ctb] (modern colors)",
+        "Maintainer": "Deepayan Sarkar <deepayan.sarkar@r-project.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-10-01 04:40:07 UTC",
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2023-11-01 20:53:33 UTC; unix"
       }
     },
     "lifecycle": {
@@ -1154,6 +1387,30 @@
         "Built": "R 4.3.0; ; 2023-04-17 22:23:05 UTC; unix"
       }
     },
+    "mgcv": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "mgcv",
+        "Version": "1.9-0",
+        "Author": "Simon Wood <simon.wood@r-project.org>",
+        "Maintainer": "Simon Wood <simon.wood@r-project.org>",
+        "Title": "Mixed GAM Computation Vehicle with Automatic Smoothness\nEstimation",
+        "Description": "Generalized additive (mixed) models, some of their extensions and\nother generalized ridge regression with multiple smoothing\nparameter estimation by (Restricted) Marginal Likelihood,\nGeneralized Cross Validation and similar, or using iterated\nnested Laplace approximation for fully Bayesian inference. See\nWood (2017) <doi:10.1201/9781315370279> for an overview.\nIncludes a gam() function, a wide variety of smoothers, 'JAGS'\nsupport and distributions beyond the exponential family.",
+        "Priority": "recommended",
+        "Depends": "R (>= 3.6.0), nlme (>= 3.1-64)",
+        "Imports": "methods, stats, graphics, Matrix, splines, utils",
+        "Suggests": "parallel, survival, MASS",
+        "LazyLoad": "yes",
+        "ByteCompile": "yes",
+        "License": "GPL (>= 2)",
+        "NeedsCompilation": "yes",
+        "Packaged": "2023-07-07 06:01:32 UTC; sw283",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-07-11 08:40:18 UTC",
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2023-11-01 20:54:55 UTC; unix"
+      }
+    },
     "mime": {
       "Source": "CRAN",
       "Repository": "http://cran.rstudio.com",
@@ -1203,6 +1460,36 @@
         "Repository": "CRAN",
         "Date/Publication": "2024-04-01 23:40:10 UTC",
         "Built": "R 4.3.2; ; 2024-04-02 00:14:17 UTC; unix"
+      }
+    },
+    "nlme": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "nlme",
+        "Version": "3.1-163",
+        "Date": "2023-07-31",
+        "Priority": "recommended",
+        "Title": "Linear and Nonlinear Mixed Effects Models",
+        "Authors@R": "c(person(\"José\", \"Pinheiro\", role = \"aut\", comment = \"S version\"),\nperson(\"Douglas\", \"Bates\", role = \"aut\", comment = \"up to 2007\"),\nperson(\"Saikat\", \"DebRoy\", role = \"ctb\", comment = \"up to 2002\"),\nperson(\"Deepayan\", \"Sarkar\", role = \"ctb\", comment = \"up to 2005\"),\nperson(\"EISPACK authors\", role = \"ctb\", comment = \"src/rs.f\"),\nperson(\"Siem\", \"Heisterkamp\", role = \"ctb\", comment = \"Author fixed sigma\"),\nperson(\"Bert\", \"Van Willigen\",role = \"ctb\", comment = \"Programmer fixed sigma\"),\nperson(\"Johannes\", \"Ranke\", role = \"ctb\", comment = \"varConstProp()\"),\nperson(\"R Core Team\", email = \"R-core@R-project.org\",\nrole = c(\"aut\", \"cre\")))",
+        "Contact": "see 'MailingList'",
+        "Description": "Fit and compare Gaussian linear and nonlinear mixed-effects models.",
+        "Depends": "R (>= 3.5.0)",
+        "Imports": "graphics, stats, utils, lattice",
+        "Suggests": "Hmisc, MASS, SASmixed",
+        "LazyData": "yes",
+        "Encoding": "UTF-8",
+        "License": "GPL (>= 2)",
+        "BugReports": "https://bugs.r-project.org",
+        "MailingList": "R-help@r-project.org",
+        "URL": "https://svn.r-project.org/R-packages/trunk/nlme/",
+        "NeedsCompilation": "yes",
+        "Packaged": "2023-08-02 07:04:32 UTC; maechler",
+        "Author": "José Pinheiro [aut] (S version),\nDouglas Bates [aut] (up to 2007),\nSaikat DebRoy [ctb] (up to 2002),\nDeepayan Sarkar [ctb] (up to 2005),\nEISPACK authors [ctb] (src/rs.f),\nSiem Heisterkamp [ctb] (Author fixed sigma),\nBert Van Willigen [ctb] (Programmer fixed sigma),\nJohannes Ranke [ctb] (varConstProp()),\nR Core Team [aut, cre]",
+        "Maintainer": "R Core Team <R-core@R-project.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-08-09 11:20:02 UTC",
+        "Built": "R 4.3.2; x86_64-apple-darwin20; 2023-11-01 20:53:46 UTC; unix"
       }
     },
     "pillar": {
@@ -1806,6 +2093,36 @@
         "Archs": "vctrs.so.dSYM"
       }
     },
+    "viridis": {
+      "Source": "CRAN",
+      "Repository": "http://cran.rstudio.com",
+      "description": {
+        "Package": "viridis",
+        "Type": "Package",
+        "Title": "Colorblind-Friendly Color Maps for R",
+        "Version": "0.6.4",
+        "Date": "2023-07-19",
+        "Authors@R": "c(\nperson(\"Simon\", \"Garnier\", email = \"garnier@njit.edu\", role = c(\"aut\", \"cre\")),\nperson(\"Noam\", \"Ross\", email = \"noam.ross@gmail.com\", role = c(\"ctb\", \"cph\")),\nperson(\"Bob\", \"Rudis\", email = \"bob@rud.is\", role = c(\"ctb\", \"cph\")),\nperson(\"Marco\", \"Sciaini\", email = \"sciaini.marco@gmail.com\", role = c(\"ctb\", \"cph\")),\nperson(\"Antônio Pedro\", \"Camargo\", role = c(\"ctb\", \"cph\")),\nperson(\"Cédric\", \"Scherer\", email = \"scherer@izw-berlin.de\", role = c(\"ctb\", \"cph\"))\n)",
+        "Maintainer": "Simon Garnier <garnier@njit.edu>",
+        "Description": "Color maps designed to improve graph readability for readers with\ncommon forms of color blindness and/or color vision deficiency. The color\nmaps are also perceptually-uniform, both in regular form and also when\nconverted to black-and-white for printing. This package also contains\n'ggplot2' bindings for discrete and continuous color and fill scales. A lean\nversion of the package called 'viridisLite' that does not include the\n'ggplot2' bindings can be found at\n<https://cran.r-project.org/package=viridisLite>.",
+        "License": "MIT + file LICENSE",
+        "Encoding": "UTF-8",
+        "Depends": "R (>= 2.10), viridisLite (>= 0.4.0)",
+        "Imports": "ggplot2 (>= 1.0.1), gridExtra",
+        "Suggests": "hexbin (>= 1.27.0), scales, MASS, knitr, dichromat,\ncolorspace, httr, mapproj, vdiffr, svglite (>= 1.2.0),\ntestthat, covr, rmarkdown, maps, terra",
+        "LazyData": "true",
+        "VignetteBuilder": "knitr",
+        "URL": "https://sjmgarnier.github.io/viridis/,\nhttps://github.com/sjmgarnier/viridis/",
+        "BugReports": "https://github.com/sjmgarnier/viridis/issues",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-07-19 13:52:50 UTC; simon",
+        "Author": "Simon Garnier [aut, cre],\nNoam Ross [ctb, cph],\nBob Rudis [ctb, cph],\nMarco Sciaini [ctb, cph],\nAntônio Pedro Camargo [ctb, cph],\nCédric Scherer [ctb, cph]",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-07-22 12:50:02 UTC",
+        "Built": "R 4.3.0; ; 2023-07-22 13:44:12 UTC; unix"
+      }
+    },
     "viridisLite": {
       "Source": "CRAN",
       "Repository": "http://cran.rstudio.com",
@@ -1957,28 +2274,31 @@
       "checksum": "7a2b810b3e303dc011925455a686ed3a"
     },
     "_site/about.html": {
-      "checksum": "fa00c5493d309e237a6e9ab18e0311df"
+      "checksum": "4c56e155d56860c100d2dda607366912"
     },
     "_site/code.png": {
-      "checksum": "a8d084b9f1ae800dc19a23dd682fb4c2"
+      "checksum": "0c7298f87a2dccab8ebd72d1b28fe9ac"
     },
     "_site/examples-r/clinical-trial-demographic-summary-table/index.html": {
-      "checksum": "654139d33152639d12342c6ac61a93c7"
+      "checksum": "71d55f49509735ded7aecd4d7893a12f"
+    },
+    "_site/examples-r/weekly-notified-dengue-cases-in-sri-lanka/index_files/figure-html/dotplot-example-1.png": {
+      "checksum": "8c75ac59711a1237bc3d1269eb58dc75"
+    },
+    "_site/examples-r/weekly-notified-dengue-cases-in-sri-lanka/index.html": {
+      "checksum": "5f60ecf8faf21a18fe786068ad288ab4"
     },
     "_site/index.html": {
-      "checksum": "dfbea2434cfd9dfea073248531c25978"
+      "checksum": "a5ad0eefbb48d45f0dd5f044709b9464"
     },
     "_site/listings.json": {
-      "checksum": "55670bfd2f37a848730b711224b86f12"
+      "checksum": "c3afc1d9d1e31877d3ee8f3090fa56a9"
     },
     "_site/posit-logo.svg": {
       "checksum": "5ffdaa38ae5a0738cf517148cdd88ea3"
     },
-    "_site/r-pharma.html": {
-      "checksum": "a89a8191897987068b18f00fa521802f"
-    },
     "_site/search.json": {
-      "checksum": "13629ca694e3d3f5ff2afb6021b4c8ac"
+      "checksum": "11bf09cd776e5282829ee87801648d37"
     },
     "_site/site_libs/bootstrap/bootstrap-8a746416e8578aa3ff5584f8b5c1b6d6.min.css": {
       "checksum": "8a746416e8578aa3ff5584f8b5c1b6d6"
@@ -1988,9 +2308,6 @@
     },
     "_site/site_libs/bootstrap/bootstrap-icons.woff": {
       "checksum": "1a51dfbe5467607389d603c02a77cd10"
-    },
-    "_site/site_libs/bootstrap/bootstrap.min.css": {
-      "checksum": "04965e7582107a49ca97b951784ed167"
     },
     "_site/site_libs/bootstrap/bootstrap.min.js": {
       "checksum": "e2b09c06f0e714b6144a6788a28e3950"
@@ -2006,9 +2323,6 @@
     },
     "_site/site_libs/quarto-html/quarto-syntax-highlighting-11bf4e9a91c71c20af5666ff88c7b664.css": {
       "checksum": "11bf4e9a91c71c20af5666ff88c7b664"
-    },
-    "_site/site_libs/quarto-html/quarto-syntax-highlighting.css": {
-      "checksum": "ab2b9e94a89b131e869fd951d6355545"
     },
     "_site/site_libs/quarto-html/quarto.js": {
       "checksum": "b2cce65711e74956eb7b7aa2f4d3943f"
@@ -2044,13 +2358,16 @@
       "checksum": "e31c3cdea03dfab8a29456978017bd10"
     },
     "about.qmd": {
-      "checksum": "b3260e8597e68ac0d3a7951d26a2e945"
+      "checksum": "7c5196c6230972341e0d15f9eef2c270"
     },
     "code.png": {
-      "checksum": "a8d084b9f1ae800dc19a23dd682fb4c2"
+      "checksum": "0c7298f87a2dccab8ebd72d1b28fe9ac"
     },
     "examples-r/clinical-trial-demographic-summary-table/index.qmd": {
       "checksum": "4531a2dde163ebcb731463e1b4dee438"
+    },
+    "examples-r/weekly-notified-dengue-cases-in-sri-lanka/index.qmd": {
+      "checksum": "10110f274d60733a2852a1279eb37b00"
     },
     "index.qmd": {
       "checksum": "c24e61ac57ff645352bc764c4b5d5115"
