@@ -1,0 +1,27 @@
+---
+title: "Weekly Notified Dengue Cases in Sri Lanka"
+categories: "General"
+description: "Using {ggplot2} to create a visualization of weekly notified dengue cases in Sri Lanka."
+format: html
+---
+
+The plot shows weekly dengue cases in Sri Lanka, represented as points where the size indicates precipitation (PP), the color reflects average temperature (TEM) using a Viridis color scale, and the transparency (alpha) corresponds to humidity (H).
+
+```{r}
+#| code-fold: true
+#| label: dotplot-example
+#| message: false
+library(ggplot2)
+library(viridis)
+
+colmozzie <- MedDataSets::colmozzie_tbl_df
+
+ggplot(colmozzie, aes(x = Week, y = Cases)) +
+  geom_point(aes(size = PP,
+                 color = TEM,
+                 alpha = H)) +
+  scale_color_viridis_c() +
+  theme_void() +
+  theme(legend.position = "none")
+```
+
