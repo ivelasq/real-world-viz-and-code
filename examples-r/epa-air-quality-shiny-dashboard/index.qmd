@@ -4,8 +4,6 @@ categories: ["Public Sector", "General"]
 description: "Using Shiny to create an EPA Air Quality Dashboard"
 format: html
 image: ../../code.png
-filters:
-  - shinylive
 ---
 
 This code creates an interactive Shiny app for visualizing EPA air quality data, which is ideal for use in marketing materials that focus on:
