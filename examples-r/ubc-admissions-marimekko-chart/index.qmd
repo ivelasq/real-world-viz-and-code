@@ -1,0 +1,40 @@
+---
+title: "UBC Admissions Marimekko Chart"
+categories: "General"
+description: "Using {ggplot2} to create a visualization of admissions to UCB by gender."
+editor: source
+---
+
+This Marimekko chart visually data, with each section representing proportions across different categories. Use this chart in materials where you want to:
+
+- Showcase the power of visual storytelling in a sleek, engaging format.
+- Use it as an example of how charts can convey information while looking visually appealing.
+- Bring a modern, professional touch to any document, presentation, or marketing piece.
+
+```{r}
+#| code-fold: true
+#| message: false
+#| fig-align: center
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+UCBAdmissions <- as.data.frame(UCBAdmissions)
+
+UCBAdmissions <- UCBAdmissions |>
+  group_by(Dept) |>
+  mutate(Total = sum(Freq), Proportion = Freq / Total)
+
+UCBAdmissions |>
+  ggplot(aes(
+    x = Dept,
+    y = Proportion,
+    fill = interaction(Gender, Admit)
+  )) +
+  geom_bar(stat = "identity",
+           position = "fill",
+           color = "white") +
+  theme_void() +
+  theme(legend.position = "none")
+```
+

@@ -1,10 +1,16 @@
 ---
-title: "Clinical trial demographic summary table"
+title: "Clinical Trial Demographic Summary Table"
 categories: "Pharma"
 description: "Using {gt} to create a demographics summary table using an ADSL ADaM clinical trial dataset."
 format: html
 image: ../../code.png
 ---
+
+This code demonstrates how to use the {gt} package to create professional tables from ADaM datasets, which are central to clinical trial reporting. It's a great example to showcase in marketing materials aimed at:
+
+- Highlighting expertise in clinical data visualization and reporting.
+- Illustrating how advanced R tools can streamline compliance with industry standards like ADaM.
+- Demonstrating professional-grade outputs for life sciences, healthcare, or regulatory audiences.
 
 ## Code
 
