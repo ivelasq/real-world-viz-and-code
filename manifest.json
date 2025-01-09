@@ -1098,6 +1098,41 @@
         "Built": "R 4.4.2; ; 2024-11-01 00:59:20 UTC; unix"
       }
     },
+    "coin": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "coin",
+        "Version": "1.4-3",
+        "Date": "2023-09-26",
+        "Title": "Conditional Inference Procedures in a Permutation Test Framework",
+        "Authors@R": "c(person(\"Torsten\", \"Hothorn\", role = c(\"aut\", \"cre\"),\n                    email = \"Torsten.Hothorn@R-project.org\",\n                    comment = c(ORCID = \"0000-0001-8301-0471\")),\n             person(\"Henric\", \"Winell\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0001-7995-3047\")),\n             person(\"Kurt\", \"Hornik\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0003-4198-9911\")),\n             person(c(\"Mark\", \"A.\"), \"van de Wiel\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0003-4780-8472\")),\n             person(\"Achim\", \"Zeileis\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0003-0918-3766\")))",
+        "Description": "Conditional inference procedures for the general independence\n             problem including two-sample, K-sample (non-parametric ANOVA),\n             correlation, censored, ordered and multivariate problems described\n             in <doi:10.18637/jss.v028.i08>.",
+        "Depends": "R (>= 3.6.0), survival",
+        "Imports": "methods, parallel, stats, stats4, utils, libcoin (>= 1.0-9),\nmatrixStats (>= 0.54.0), modeltools (>= 0.2-9), mvtnorm (>=\n1.0-5), multcomp",
+        "Suggests": "xtable, e1071, vcd, TH.data (>= 1.0-7)",
+        "LinkingTo": "libcoin (>= 1.0-9)",
+        "LazyData": "yes",
+        "NeedsCompilation": "yes",
+        "ByteCompile": "yes",
+        "Encoding": "UTF-8",
+        "License": "GPL-2",
+        "URL": "http://coin.r-forge.r-project.org",
+        "Packaged": "2023-09-27 09:53:17 UTC; hothorn",
+        "Author": "Torsten Hothorn [aut, cre] (<https://orcid.org/0000-0001-8301-0471>),\n  Henric Winell [aut] (<https://orcid.org/0000-0001-7995-3047>),\n  Kurt Hornik [aut] (<https://orcid.org/0000-0003-4198-9911>),\n  Mark A. van de Wiel [aut] (<https://orcid.org/0000-0003-4780-8472>),\n  Achim Zeileis [aut] (<https://orcid.org/0000-0003-0918-3766>)",
+        "Maintainer": "Torsten Hothorn <Torsten.Hothorn@R-project.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2023-09-27 16:10:02 UTC",
+        "Built": "R 4.4.0; aarch64-apple-darwin20; 2024-04-06 09:21:45 UTC; unix",
+        "Archs": "coin.so.dSYM",
+        "RemoteType": "standard",
+        "RemotePkgRef": "coin",
+        "RemoteRef": "coin",
+        "RemoteRepos": "https://cloud.r-project.org",
+        "RemotePkgPlatform": "aarch64-apple-darwin20",
+        "RemoteSha": "1.4-3"
+      }
+    },
     "colorspace": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -3034,6 +3069,40 @@
         "RemoteSha": "1.13"
       }
     },
+    "matrixStats": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "matrixStats",
+        "Version": "1.5.0",
+        "Depends": "R (>= 3.4.0)",
+        "Suggests": "utils, base64enc, ggplot2, knitr, markdown, microbenchmark,\nR.devices, R.rsp",
+        "VignetteBuilder": "R.rsp",
+        "Title": "Functions that Apply to Rows and Columns of Matrices (and to\nVectors)",
+        "Authors@R": "c(\n  person(\"Henrik\", \"Bengtsson\", role=c(\"aut\", \"cre\", \"cph\"),\n                                 email=\"henrikb@braju.com\"),\n  person(\"Constantin\", \"Ahlmann-Eltze\", role = \"ctb\"),\n  person(\"Hector\", \"Corrada Bravo\", role=\"ctb\"),\n  person(\"Robert\", \"Gentleman\", role=\"ctb\"),\n  person(\"Jan\", \"Gleixner\", role=\"ctb\"),\n  person(\"Peter\", \"Hickey\", role=\"ctb\"),\n  person(\"Ola\", \"Hossjer\", role=\"ctb\"),\n  person(\"Harris\", \"Jaffee\", role=\"ctb\"),\n  person(\"Dongcan\", \"Jiang\", role=\"ctb\"),\n  person(\"Peter\", \"Langfelder\", role=\"ctb\"),\n  person(\"Brian\", \"Montgomery\", role=\"ctb\"),\n  person(\"Angelina\", \"Panagopoulou\", role=\"ctb\"),\n  person(\"Hugh\", \"Parsonage\", role=\"ctb\"),\n  person(\"Jakob Peder\", \"Pettersen\", role=\"ctb\"))",
+        "Author": "Henrik Bengtsson [aut, cre, cph],\n  Constantin Ahlmann-Eltze [ctb],\n  Hector Corrada Bravo [ctb],\n  Robert Gentleman [ctb],\n  Jan Gleixner [ctb],\n  Peter Hickey [ctb],\n  Ola Hossjer [ctb],\n  Harris Jaffee [ctb],\n  Dongcan Jiang [ctb],\n  Peter Langfelder [ctb],\n  Brian Montgomery [ctb],\n  Angelina Panagopoulou [ctb],\n  Hugh Parsonage [ctb],\n  Jakob Peder Pettersen [ctb]",
+        "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
+        "Description": "High-performing functions operating on rows and columns of matrices, e.g. col / rowMedians(), col / rowRanks(), and col / rowSds().  Functions optimized per data type and for subsetted calculations such that both memory usage and processing time is minimized.  There are also optimized vector-based methods, e.g. binMeans(), madDiff() and weightedMedian().",
+        "License": "Artistic-2.0",
+        "LazyLoad": "TRUE",
+        "NeedsCompilation": "yes",
+        "ByteCompile": "TRUE",
+        "URL": "https://github.com/HenrikBengtsson/matrixStats",
+        "BugReports": "https://github.com/HenrikBengtsson/matrixStats/issues",
+        "RoxygenNote": "7.3.2",
+        "Packaged": "2025-01-07 17:25:20 UTC; henrik",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-01-07 19:50:02 UTC",
+        "Built": "R 4.4.1; aarch64-apple-darwin20; 2025-01-07 20:30:33 UTC; unix",
+        "Archs": "matrixStats.so.dSYM",
+        "RemoteType": "standard",
+        "RemotePkgRef": "matrixStats",
+        "RemoteRef": "matrixStats",
+        "RemoteRepos": "https://cloud.r-project.org",
+        "RemotePkgPlatform": "aarch64-apple-darwin20",
+        "RemoteSha": "1.5.0"
+      }
+    },
     "mboost": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -3259,6 +3328,34 @@
         "RemoteRepos": "https://cloud.r-project.org",
         "RemotePkgPlatform": "aarch64-apple-darwin20",
         "RemoteSha": "0.2.0"
+      }
+    },
+    "modeltools": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "modeltools",
+        "Title": "Tools and Classes for Statistical Models",
+        "Date": "2020-03-05",
+        "Version": "0.2-23",
+        "Author": "Torsten Hothorn, Friedrich Leisch, Achim Zeileis ",
+        "Maintainer": "Torsten Hothorn <Torsten.Hothorn@R-project.org>",
+        "Description": "A collection of tools to deal with statistical models. \n  The functionality is experimental and the user interface is likely to\n  change in the future. The documentation is rather terse, but packages `coin'\n  and `party' have some working examples. However, if you find the\n  implemented ideas interesting we would be very interested in a discussion\n  of this proposal. Contributions are more than welcome!",
+        "Depends": "stats, stats4",
+        "Imports": "methods",
+        "LazyLoad": "yes",
+        "License": "GPL-2",
+        "NeedsCompilation": "no",
+        "Packaged": "2020-03-05 10:45:24 UTC; hothorn",
+        "Repository": "CRAN",
+        "Date/Publication": "2020-03-05 11:50:06 UTC",
+        "Built": "R 4.4.0; ; 2024-04-05 15:21:54 UTC; unix",
+        "RemoteType": "standard",
+        "RemotePkgRef": "modeltools",
+        "RemoteRef": "modeltools",
+        "RemoteRepos": "https://cloud.r-project.org",
+        "RemotePkgPlatform": "aarch64-apple-darwin20",
+        "RemoteSha": "0.2-23"
       }
     },
     "multcomp": {
@@ -3537,6 +3634,39 @@
         "RemoteRepos": "https://cloud.r-project.org",
         "RemotePkgPlatform": "aarch64-apple-darwin20",
         "RemoteSha": "1.2.1"
+      }
+    },
+    "party": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "party",
+        "Title": "A Laboratory for Recursive Partytioning",
+        "Date": "2024-08-17",
+        "Version": "1.3-17",
+        "Authors@R": "c(person(\"Torsten\", \"Hothorn\", role = c(\"aut\", \"cre\"),\n                    email = \"Torsten.Hothorn@R-project.org\",\n                    comment = c(ORCID = \"0000-0001-8301-0471\")),\n             person(\"Kurt\", \"Hornik\", role = \"aut\",\n\t            email = \"Kurt.Hornik@R-project.org\",\n                    comment = c(ORCID = \"0000-0003-4198-9911\")),\n             person(\"Carolin\", \"Strobl\", role = \"aut\",\n\t            email = \"carolin.strobl@psychologie.uzh.ch\",\n                    comment = c(ORCID = \"0000-0003-0952-3230\")),\n             person(\"Achim\", \"Zeileis\", role = \"aut\",\n\t            email = \"Achim.Zeileis@R-project.org\",\n                    comment = c(ORCID = \"0000-0003-0918-3766\")))",
+        "Description": "A computational toolbox for recursive partitioning.\n  The core of the package is ctree(), an implementation of\n  conditional inference trees which embed tree-structured \n  regression models into a well defined theory of conditional\n  inference procedures. This non-parametric class of regression\n  trees is applicable to all kinds of regression problems, including\n  nominal, ordinal, numeric, censored as well as multivariate response\n  variables and arbitrary measurement scales of the covariates. \n  Based on conditional inference trees, cforest() provides an\n  implementation of Breiman's random forests. The function mob()\n  implements an algorithm for recursive partitioning based on\n  parametric models (e.g. linear models, GLMs or survival\n  regression) employing parameter instability tests for split\n  selection. Extensible functionality for visualizing tree-structured\n  regression models is available. The methods are described in\n  Hothorn et al. (2006) <doi:10.1198/106186006X133933>,\n  Zeileis et al. (2008) <doi:10.1198/106186008X319331> and \n  Strobl et al. (2007) <doi:10.1186/1471-2105-8-25>.",
+        "Depends": "R (>= 3.0.0), methods, grid, stats, mvtnorm (>= 1.0-2),\nmodeltools (>= 0.2-21), strucchange",
+        "LinkingTo": "mvtnorm",
+        "Imports": "survival (>= 2.37-7), coin (>= 1.1-0), zoo, sandwich (>=\n1.1-1)",
+        "Suggests": "TH.data (>= 1.0-3), mlbench, colorspace, MASS, vcd, ipred,\nvarImp, randomForest",
+        "LazyData": "yes",
+        "License": "GPL-2",
+        "URL": "http://party.R-forge.R-project.org",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-08-17 12:25:24 UTC; hothorn",
+        "Author": "Torsten Hothorn [aut, cre] (<https://orcid.org/0000-0001-8301-0471>),\n  Kurt Hornik [aut] (<https://orcid.org/0000-0003-4198-9911>),\n  Carolin Strobl [aut] (<https://orcid.org/0000-0003-0952-3230>),\n  Achim Zeileis [aut] (<https://orcid.org/0000-0003-0918-3766>)",
+        "Maintainer": "Torsten Hothorn <Torsten.Hothorn@R-project.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-08-17 13:20:03 UTC",
+        "Built": "R 4.4.0; aarch64-apple-darwin20; 2024-08-17 15:16:15 UTC; unix",
+        "Archs": "party.so.dSYM",
+        "RemoteType": "standard",
+        "RemotePkgRef": "party",
+        "RemoteRef": "party",
+        "RemoteRepos": "https://cloud.r-project.org",
+        "RemotePkgPlatform": "aarch64-apple-darwin20",
+        "RemoteSha": "1.3-17"
       }
     },
     "partykit": {
@@ -4709,6 +4839,37 @@
         "RemoteSha": "1.5.1"
       }
     },
+    "strucchange": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "strucchange",
+        "Version": "1.5-4",
+        "Date": "2024-09-02",
+        "Title": "Testing, Monitoring, and Dating Structural Changes",
+        "Authors@R": "c(person(given = \"Achim\", family = \"Zeileis\", role = c(\"aut\", \"cre\"), email = \"Achim.Zeileis@R-project.org\",\n                    comment = c(ORCID = \"0000-0003-0918-3766\")),\n             person(given = \"Friedrich\", family = \"Leisch\", role = \"aut\", email = \"Friedrich.Leisch@R-project.org\"),\n             person(given = \"Kurt\", family = \"Hornik\", role = \"aut\", email = \"Kurt.Hornik@R-project.org\"),\n\t     person(given = \"Christian\", family = \"Kleiber\", role = \"aut\", email = \"Christian.Kleiber@unibas.ch\"),\n\t     person(given = \"Bruce\", family = \"Hansen\", role = \"ctb\"),\n\t     person(given = c(\"Edgar\", \"C.\"), family = \"Merkle\", role = \"ctb\"),\n\t     person(given = \"Nikolaus\", family = \"Umlauf\", role = \"ctb\"))",
+        "Description": "Testing, monitoring and dating structural changes in (linear)\n             regression models. strucchange features tests/methods from\n\t     the generalized fluctuation test framework as well as from\n\t     the F test (Chow test) framework. This includes methods to\n\t     fit, plot and test fluctuation processes (e.g., CUSUM, MOSUM,\n\t     recursive/moving estimates) and F statistics, respectively.\n             It is possible to monitor incoming data online using\n             fluctuation processes.\n             Finally, the breakpoints in regression models with structural\n             changes can be estimated together with confidence intervals.\n             Emphasis is always given to methods for visualizing the data.",
+        "LazyData": "yes",
+        "Depends": "R (>= 2.10.0), zoo, sandwich",
+        "Suggests": "stats4, car, dynlm, e1071, foreach, lmtest, mvtnorm, tseries",
+        "Imports": "graphics, stats, utils",
+        "License": "GPL-2 | GPL-3",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-09-02 00:15:58 UTC; zeileis",
+        "Author": "Achim Zeileis [aut, cre] (<https://orcid.org/0000-0003-0918-3766>),\n  Friedrich Leisch [aut],\n  Kurt Hornik [aut],\n  Christian Kleiber [aut],\n  Bruce Hansen [ctb],\n  Edgar C. Merkle [ctb],\n  Nikolaus Umlauf [ctb]",
+        "Maintainer": "Achim Zeileis <Achim.Zeileis@R-project.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-09-02 08:00:02 UTC",
+        "Built": "R 4.4.1; aarch64-apple-darwin20; 2024-09-02 11:27:57 UTC; unix",
+        "Archs": "strucchange.so.dSYM",
+        "RemoteType": "standard",
+        "RemotePkgRef": "strucchange",
+        "RemoteRef": "strucchange",
+        "RemoteRepos": "https://cloud.r-project.org",
+        "RemotePkgPlatform": "aarch64-apple-darwin20",
+        "RemoteSha": "1.5-4"
+      }
+    },
     "survival": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -5582,19 +5743,43 @@
     "_site/examples-r/epa-air-quality-shiny-dashboard/index.html": {
       "checksum": "a193392bbe12960d456fee8164649918"
     },
+    "_site/examples-r/iris-random-forest-tree/index_files/figure-html/random-forest-tree-1.png": {
+      "checksum": "ee75375e19a51f0b81ed13b19c0e1704"
+    },
+    "_site/examples-r/iris-random-forest-tree/index.html": {
+      "checksum": "7a3e128778084fb00e2549f021fdd084"
+    },
     "_site/examples-r/lung-cancer-survival-analysis-chart/index_files/figure-html/survival-analysis-1-1.png": {
-      "checksum": "a3e4e0ae14a0f1f21144857299a66b1c"
+      "checksum": "efe71edbfc3f11aae619e059e411c0f6"
     },
     "_site/examples-r/lung-cancer-survival-analysis-chart/index_files/figure-html/survival-analysis-2-1.png": {
+      "checksum": "a3e4e0ae14a0f1f21144857299a66b1c"
+    },
+    "_site/examples-r/lung-cancer-survival-analysis-chart/index_files/figure-html/unnamed-chunk-1-1.png": {
+      "checksum": "d319646cfdbbcae06494e14cd9fcdff7"
+    },
+    "_site/examples-r/lung-cancer-survival-analysis-chart/index_files/figure-html/unnamed-chunk-1-2.png": {
+      "checksum": "c5470abf328fe97fd4f09cb950d7914e"
+    },
+    "_site/examples-r/lung-cancer-survival-analysis-chart/index_files/figure-html/unnamed-chunk-2-1.png": {
+      "checksum": "2a393812f6e51dc50eceffd9f736b89c"
+    },
+    "_site/examples-r/lung-cancer-survival-analysis-chart/index_files/figure-html/unnamed-chunk-3-1.png": {
       "checksum": "efe71edbfc3f11aae619e059e411c0f6"
     },
     "_site/examples-r/lung-cancer-survival-analysis-chart/index.html": {
-      "checksum": "adf21afb1b270ffe4ff775f29fd7d134"
+      "checksum": "e334fa359746136482d9cd58fdf1fda4"
     },
     "_site/examples-r/ubc-admissions-marimekko-chart/index_files/figure-html/unnamed-chunk-1-1.png": {
       "checksum": "ce722c0e605f776dd8f915c59256a4fc"
     },
     "_site/examples-r/ubc-admissions-marimekko-chart/index.html": {
+      "checksum": "d51574922ed31e84d5e4a79f87a7eb26"
+    },
+    "_site/examples-r/ucb-admissions-marimekko-chart/index_files/figure-html/unnamed-chunk-1-1.png": {
+      "checksum": "ce722c0e605f776dd8f915c59256a4fc"
+    },
+    "_site/examples-r/ucb-admissions-marimekko-chart/index.html": {
       "checksum": "d51574922ed31e84d5e4a79f87a7eb26"
     },
     "_site/examples-r/weekly-notified-dengue-cases-in-sri-lanka/index_files/figure-html/dotplot-example-1.png": {
@@ -5604,16 +5789,16 @@
       "checksum": "3eb2f5978ee0b51a2607c22b8a676672"
     },
     "_site/index.html": {
-      "checksum": "d1a717ddee18199a8cd3e08c8e7cb332"
+      "checksum": "ff0232538ea324e251f6dc01468ec44e"
     },
     "_site/listings.json": {
-      "checksum": "64ae3ec076d7be04853f87c542d53e0c"
+      "checksum": "a5a82bebfd9910b10abb02fa8a6f5e27"
     },
     "_site/posit-logo.svg": {
       "checksum": "5ffdaa38ae5a0738cf517148cdd88ea3"
     },
     "_site/search.json": {
-      "checksum": "4375bd669a673432bc1b925f71bfeff8"
+      "checksum": "1f9ab354af4171ee91dfb36d5fd53fb3"
     },
     "_site/site_libs/bootstrap/bootstrap-8a746416e8578aa3ff5584f8b5c1b6d6.min.css": {
       "checksum": "8a746416e8578aa3ff5584f8b5c1b6d6"
@@ -5684,10 +5869,13 @@
     "examples-r/epa-air-quality-shiny-dashboard/index.qmd": {
       "checksum": "fc1b04f682e7a6192543bfe45055859c"
     },
+    "examples-r/iris-random-forest-tree/index.qmd": {
+      "checksum": "3c1b096ad7a9b04e26e28f57eb6fa5f9"
+    },
     "examples-r/lung-cancer-survival-analysis-chart/index.qmd": {
       "checksum": "4de50783d1df4cb201cc7d02b47ac0d0"
     },
-    "examples-r/ubc-admissions-marimekko-chart/index.qmd": {
+    "examples-r/ucb-admissions-marimekko-chart/index.qmd": {
       "checksum": "403ad16e4d6adca317d8a86b980a221f"
     },
     "examples-r/weekly-notified-dengue-cases-in-sri-lanka/index.qmd": {

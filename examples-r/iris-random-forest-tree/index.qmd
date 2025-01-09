@@ -1,0 +1,35 @@
+---
+title: "Iris Random Forest Tree"
+categories: "General"
+description: "Using {party} to create a random forest tree."
+format: html
+---
+
+This visualization breaks down one of the decision trees from a Random Forest model, showing how the algorithm makes predictions by splitting data based on key variables. Use this visualization in materials where you want to:
+
+- Demonstrate AI and machine learning: Highlight how complex algorithms work in a way that’s approachable and visually engaging.
+- Showcase decision-making processes: Use it to emphasize structured, data-driven insights in marketing or operational contexts.
+- Illustrate innovation: Position it as an example of cutting-edge data science tools in fields like healthcare, finance, or business strategy.
+
+:::{.callout-note}
+When adapting the visualization, I recommend removing the figures and text. The shapes and general organization alone are sufficient to convey the visual structure.
+:::
+
+:::{.column-body-outset}
+
+```{r}
+#| label: random-forest-tree
+#| code-fold: true
+#| message: false
+#| fig-width: 12
+library(party)
+
+cf <- ctree(Species ~ .,
+        data = iris,
+        controls = cforest_control(mtry = 2, mincriterion = 0))
+
+plot(cf, type = "simple")
+```
+
+
+:::
