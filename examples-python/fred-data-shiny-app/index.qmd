@@ -1,0 +1,153 @@
+---
+title: "FRED Financial Data Shiny Dashboard"
+categories: ["Finance", "General"]
+description: "Using Shiny to create a FRED Economic Data dashboard."
+format: html
+image: ../../code.png
+---
+
+This Shiny for Python dashboard displays economic data from the Federal Reserve Economic Data (FRED) API. It’s a dynamic, interactive tool for exploring key economic indicators.
+
+Use this dashboard in materials where you want to:
+
+- Demonstrate how data visualization tools can make data actionable and understandable.
+- Position Shiny for Python as a user-friendly framework for creating interactive dashboards.
+- Emphasize data-driven decision-making in fields like banking, investment, or public policy.
+
+```python
+from shiny import App, reactive, render, ui
+import polars as pl
+from plotnine import ggplot, aes, geom_line, theme_minimal, labs, theme
+from plotnine import element_text, element_blank, element_rect
+import urllib3
+import json
+from datetime import datetime, timedelta
+from fredapi import Fred
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+FRED_API_KEY = os.environ.get('FRED_API_KEY')
+fred = Fred(api_key=FRED_API_KEY)
+
+SERIES_INFO = {
+    'GDP': {'id': 'GDP', 'name': 'Gross Domestic Product'},
+    'UNRATE': {'id': 'UNRATE', 'name': 'Unemployment Rate'},
+    'CPIAUCSL': {'id': 'CPIAUCSL', 'name': 'Consumer Price Index'},
+    'FEDFUNDS': {'id': 'FEDFUNDS', 'name': 'Federal Funds Rate'},
+    'M2': {'id': 'M2', 'name': 'M2 Money Supply'},
+}
+
+app_ui = ui.page_sidebar(
+    ui.sidebar(
+        ui.input_select(
+            "series",
+            "Economic Indicator",
+            choices={k: v['name'] for k, v in SERIES_INFO.items()}
+        ),
+        ui.input_numeric(
+            "years",
+            "Years of History",
+            value=10,
+            min=1,
+            max=30
+        ),
+        ui.input_select(
+            "chart_type",
+            "Chart Type",
+            choices=["Line", "Bar"]
+        ),
+    ),
+    ui.card(
+        ui.card_header("Economic Indicator Chart"),
+        ui.output_plot("main_plot"),
+    ),
+    ui.card(
+        ui.card_header("Statistics"),
+        ui.output_table("stats_table"),
+    ),
+    title="FRED Economic Data Dashboard"
+)
+
+def server(input, output, session):
+    
+    @reactive.calc
+    def get_fred_data():
+        series_id = input.series()
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=365 * input.years())
+        
+        try:
+            df = fred.get_series(
+                series_id,
+                start_date,
+                end_date
+            )
+            # Convert pandas to polars
+            return pl.from_pandas(df.reset_index()).rename(
+                {'index': 'date', '0': 'value'}
+            )
+        except Exception as e:
+            return None
+
+    @render.plot
+    def main_plot():
+        df = get_fred_data()
+        if df is None or df.height == 0:
+            return ggplot() + labs(title="No data available")
+        
+        plot = (
+            ggplot(df.to_pandas(), aes(x='date', y='value'))
+            + theme_minimal()
+            + labs(
+                title=f"{SERIES_INFO[input.series()]['name']} ({input.series()})",
+                x="Date",
+                y="Value"
+            )
+            + theme(
+                axis_text_x=element_text(rotation=45, hjust=1),
+                figure_size=(10, 6)
+            )
+        )
+        
+        if input.chart_type() == "Line":
+            plot = plot + geom_line(size=1)
+        else:
+            plot = plot + geom_bar(stat='identity', alpha=0.6)
+            
+        return plot
+
+    @render.table
+    def stats_table():
+        df = get_fred_data()
+        if df is None or df.height == 0:
+            return pl.DataFrame()
+        
+        current_value = df.select('value').row(df.height - 1)[0]
+        year_ago_idx = max(df.height - 13, 0)
+        year_ago_value = df.select('value').row(year_ago_idx)[0]
+        
+        stats = pl.DataFrame({
+            'Metric': [
+                'Current Value',
+                'Year-Ago Value',
+                'Annual Change',
+                'Annual % Change',
+                'Average (Period)',
+                'Minimum (Period)',
+                'Maximum (Period)'
+            ],
+            'Value': [
+                f"{current_value:.2f}",
+                f"{year_ago_value:.2f}",
+                f"{(current_value - year_ago_value):.2f}",
+                f"{((current_value - year_ago_value) / year_ago_value * 100):.1f}%",
+                f"{df.select(pl.col('value').mean()).item():.2f}",
+                f"{df.select(pl.col('value').min()).item():.2f}",
+                f"{df.select(pl.col('value').max()).item():.2f}"
+            ]
+        })
+        return stats
+
+app = App(app_ui, server)
+````

@@ -1,0 +1,35 @@
+---
+title: "Pageviews Box Plot"
+categories: "General"
+description: "Using {plotnine} to create boxplots."
+format: html
+---
+
+This shows a boxplot of pageviews, highlighting trends, variability, and outliers. It’s a compact and effective way to showcase the distribution of pageviews across different periods. Use this visualization in materials where you want to:
+
+- Use it as an example of how data visualization can summarize complex data in a single, clean graphic.
+- Emphasize the ability to identify peaks, dips, and unusual activity at a glance.
+
+```{python}
+#| label: plotnine-box-plot
+#| code-fold: true
+#| message: false
+import pandas as pd
+import numpy as np
+
+from plotnine import (
+    ggplot,
+    aes,
+    geom_boxplot
+)
+from plotnine.data import pageviews
+
+pageviews['hour'] = pageviews.date_hour.dt.hour
+display(f'Dataset contains {pageviews.shape[0]} rows')
+pageviews.head()
+
+(
+    ggplot(pageviews)
+    + geom_boxplot(aes(x='factor(hour)', y='pageviews'))
+)
+```

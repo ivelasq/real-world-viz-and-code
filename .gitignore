@@ -6,3 +6,6 @@
 /.quarto/
 _site/*
 .DS_Store
+
+/env/
+.env

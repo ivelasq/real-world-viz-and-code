@@ -6,6 +6,10 @@ listing:
     contents: examples-r
     type: grid
     categories: true
+  - id: examples-python
+    contents: examples-python
+    type: grid
+    categories: true
 format: 
   html:
     page-layout: article
@@ -16,4 +20,7 @@ format:
 :::{#examples-r}
 :::
 
+## Python
 
+:::{#examples-python}
+:::
