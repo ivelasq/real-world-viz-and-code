@@ -18,6 +18,7 @@ from plotnine import (
     aes,
     geom_density,
     geom_histogram,
+    after_stat,
     theme
 )
 
