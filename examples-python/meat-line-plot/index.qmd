@@ -1,0 +1,43 @@
+---
+title: "Meat Weight Line Graph"
+categories: "General"
+description: "Using {plotnine} to create a line graph."
+format: html
+---
+
+A line graph tracking meat weight over time. The continuous flow of the line makes it intuitive to spot patterns, seasonal effects, or significant shifts. Use this visualization in materials where you want to:
+
+- Highlight long-term patterns or fluctuations in quantities over time.
+- Use it as an example of how simple visuals can make temporal data more engaging and easy to understand.
+- Position it in contexts like supply chain analysis, production tracking, or consumption studies.
+
+```{python}
+#| label: plotnine-box-plot
+#| code-fold: true
+#| message: false
+import pandas as pd
+import numpy as np
+
+from plotnine import (
+    ggplot,
+    aes,
+    geom_line,
+    scale_x_datetime,
+    theme
+)
+from plotnine.data import meat
+
+meat_long = meat.melt(
+    id_vars='date',
+    value_vars=['beef', 'veal', 'pork', 'lamb_and_mutton', 'broilers', 'turkey'],
+    var_name='animal',
+    value_name='weight'
+).dropna()
+
+(
+    ggplot(meat_long, aes(x='date', y='weight', color='animal'))
+    + geom_line()
+    + scale_x_datetime(date_breaks='10 years', date_labels='%Y')
+    + theme(legend_position='none')
+)
+```

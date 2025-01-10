@@ -1,0 +1,61 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"MPG Density Plots\"\n",
+        "categories: \"General\"\n",
+        "description: \"Using {plotnine} to create a line graph.\"\n",
+        "format: html\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "A density chart of miles per gallon (mpg) provides a smooth and elegant way to visualize the distribution of vehicle fuel efficiency. Use this visualization in materials where you want to:\n",
+        "    \n",
+        "- Demonstrate analytical tools: Use it as an example of how to turn raw data into clear insights.\n"
+      ],
+      "id": "049a32f0"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "from plotnine import (\n",
+        "    ggplot,\n",
+        "    aes,\n",
+        "    geom_density,\n",
+        "    geom_histogram,\n",
+        "    theme\n",
+        ")\n",
+        "\n",
+        "from plotnine.data import mpg\n",
+        "\n",
+        "(\n",
+        "    ggplot(mpg, aes(x=\"cty\", color=\"drv\", fill=\"drv\"))\n",
+        "    + geom_density(aes(y=after_stat(\"count\")), alpha=0.1)\n",
+        "    + theme(legend_position='none')\n",
+        ")"
+      ],
+      "id": "084e554c",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/isabella.velasquez/Projects/real-world-viz-and-code/env/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

@@ -1,0 +1,31 @@
+---
+title: "MPG Density Plots"
+categories: "General"
+description: "Using {plotnine} to create a line graph."
+format: html
+---
+
+A density chart of miles per gallon (mpg) provides a smooth and elegant way to visualize the distribution of vehicle fuel efficiency. Use this visualization in materials where you want to:
+    
+- Demonstrate analytical tools: Use it as an example of how to turn raw data into clear insights.
+
+```{python}
+import pandas as pd
+import numpy as np
+
+from plotnine import (
+    ggplot,
+    aes,
+    geom_density,
+    geom_histogram,
+    theme
+)
+
+from plotnine.data import mpg
+
+(
+    ggplot(mpg, aes(x="cty", color="drv", fill="drv"))
+    + geom_density(aes(y=after_stat("count")), alpha=0.1)
+    + theme(legend_position='none')
+)
+```
